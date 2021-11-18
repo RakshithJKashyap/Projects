@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Document</title>
+</head>
+<body>
+    <h1>Heart Disease Prediction</h1>
+    <form method="POST" action="{% url 'predict_health'%}">
+        {% csrf_token %}
+        
+        <div class="mb-4" style="align-self: center; margin: 5rem;">
+            <label for="usernameValidate">Age: </label>
+            <input type="text" class="form-control is-invalid" id="age" name='age' value="{{data.age}}" required>
+        </div>
+        <div class="mb-4" style="align-self: center; margin: 5rem;">            
+            <label for="usernameValidate">Sex: </label>
+            <input type="text" class="form-control is-invalid" id="sex" name='sex' value="{{data.sex}}" required>
+        </div>
+        <div class="mb-4" style="align-self: center; margin: 5rem;">
+            <label for="usernameValidate">Chest pain type (4 values) : </label>
+            <input type="text" class="form-control is-invalid" id="cp" name='cp' value="{{data.cp}}" required>
+        </div>
+        <div class="mb-4" style="align-self: center; margin: 5rem;">
+            <label for="usernameValidate">Resting blood pressure: </label>
+            <input type="text" class="form-control is-invalid" id="trestbps" name='trestbps' value="{{data.trestbps}}" required>
+        </div>
+        <div class="mb-4" style="align-self: center; margin: 5rem;">
+            <label for="usernameValidate">Serum cholestoral in mg/dl: </label>
+            <input type="text" class="form-control is-invalid" id="chol" name='chol' value="{{data.chol}}" required>
+        </div> 
+        <div class="mb-4" style="align-self: center; margin: 5rem;">
+            <label for="usernameValidate">Fasting blood sugar > 120 mg/dl: </label>
+            <input type="text" class="form-control is-invalid" id="fbs" name='fbs' value="{{data.fbs}}" required>
+        </div>
+        <div class="mb-4" style="align-self: center; margin: 5rem;">
+            <label for="usernameValidate">Resting electrocardiographic results (values 0,1,2): </label>
+            <input type="text" class="form-control is-invalid" id="restecg" name='restecg' value="{{data.restecg}}" required>
+        </div>
+        <div class="mb-4" style="align-self: center; margin: 5rem;">
+            <label for="usernameValidate">Maximum heart rate achieved : </label>
+            <input type="text" class="form-control is-invalid" id="thalach" name='thalach' value="{{data.thalach}}" required>
+        </div>
+        
+        
+  
+    
+    
+   <br>
+<input  type="submit" value='Submit'/>
+</form><br>
+{% if data.price %}
+          Result : {{ data.price }}        
+     {% endif %}</div>
+</body>
+</html>
